@@ -1,0 +1,55 @@
+@import "@/assets/scss/variables";
+
+@mixin responsiveButtonStyle{
+  // define some variables  sizing
+$button-padding: 0.4rem 1rem;
+
+// define the base button styles
+.btn {
+  background-color: $mainColor;
+  border-radius: $borderRadius;
+  color: white;
+  padding: 1px 10px;
+  box-shadow: $boxShadow;
+  border: none;
+  border: 1px solid $primaryColor;
+  padding: $button-padding;
+  margin-bottom: 1rem;
+   // adjust the button font size  
+
+  // adjust the button styles for larger screens
+  @media (min-width: 768px) {
+  
+    padding: 0.22rem 1rem;
+  }
+  
+  // adjust the button styles for even larger screens
+  @media (min-width: 1024px) {
+  
+    padding: 0.42rem 1rem;
+  }
+  
+  // add hover and active states to the button
+  &:hover,
+  &:focus {
+    background-color: darken($primaryColor, 10%);
+    border-color: darken($primaryColor, 10%);
+    color: white;
+  }
+  
+  &:active {
+    background-color: darken($primaryColor, 20%);
+    border-color: darken($primaryColor, 20%);
+    color: white;
+  }
+  
+  // add disabled styles to the button
+  &:disabled {
+    background-color: $mainColor;
+    border-color: $mainColor;
+    color: lighten($primaryColor, 50%);
+    cursor: not-allowed;
+  }
+}
+
+}

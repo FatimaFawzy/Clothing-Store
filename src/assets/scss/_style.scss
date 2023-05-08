@@ -1,0 +1,38 @@
+
+
+ul {
+  list-style: none;
+}
+
+@mixin buttonStyle{
+  background-color: $mainColor;
+  border-radius: $borderRadius;
+  color: rgba(255, 255, 255, 0.96);
+  padding: 3px 20px;
+  box-shadow: $boxShadow;
+  border: none;
+  margin: 2%;
+}
+
+
+body{
+::-webkit-scrollbar {
+  width: 3px;
+  /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track
+ {
+  background:  $mainColor;
+  /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $primaryColor;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid $mainColor;
+  /* creates padding around scroll thumb */
+}
+}

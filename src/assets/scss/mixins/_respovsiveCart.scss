@@ -1,0 +1,45 @@
+ @mixin respovsiveCart($clacValue){
+ 
+$cart-padding: 1rem;
+$cart-margin-bottom: 1rem;
+
+// define the base cart styles
+.cart {
+
+  margin-bottom: $cart-margin-bottom;
+  
+  // adjust the cart styles for larger screens
+  @media (min-width: 768px) {
+    padding: $cart-padding * 2;
+    
+  }
+  
+  // adjust the cart styles for even larger screens
+  @media (min-width: 1024px) {
+    margin-right: $cart-margin-bottom;
+    max-width: calc(#{$clacValue} - #{$cart-margin-bottom});
+  }
+}
+
+// define the grid styles
+.cart-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -($cart-margin-bottom / 2);
+
+  .cart {
+    flex-basis: 100%;
+    margin: $cart-margin-bottom / 2;
+    
+    // adjust the cart styles for larger screens
+    @media (min-width: 768px) {
+      flex-basis: calc(30% - #{$cart-margin-bottom});
+    }
+    
+    // adjust the cart styles for even larger screens
+    @media (min-width: 1024px) {
+      flex-basis: calc(#{$clacValue} - #{$cart-margin-bottom});
+    }
+  }
+}
+}
